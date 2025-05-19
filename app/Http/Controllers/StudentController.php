@@ -12,18 +12,39 @@ class StudentController extends Controller
      */
     public function index()
     {
+
+        // return "hello";
+// $data = Student::firstOrCreate(
+//     ['name' => 'Fatima'],
+//     [
+//         'rollnumber' => 30,
+//         'city' => 'Islamabad',
+//     ]
+// );
+
+$data=student::updateOrCreate(
+[
+"name"=>"shahid",
+"rollnumber"=>7342,
+],
+[
+    "city"=>"lahore",
+]
+);
+
+// return $data;
         // return student::all();
         // $data= student::all();
         // foreach($data as $value){
         //     echo `$value->name-$value->city-$value->rollnumber."<br>"`;
-        // }
+//         // }
 
-Student::chunk(10, function ($users) {
-    foreach ($users as $value) {
-        echo $value->name .$value->city. "<br>"; // ✅ correct way
-    }
-    echo "<br>";
-});
+// Student::chunk(10, function ($users) {
+//     foreach ($users as $value) {
+//         echo $value->name .$value->city. "<br>"; // ✅ correct way
+//     }
+//     echo "<br>";
+// });
 
     }
 
